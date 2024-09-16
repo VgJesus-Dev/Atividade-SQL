@@ -40,8 +40,14 @@ ADD nomeanimalzinho VARCHAR(180) NOT NULL;
 INSERT INTO cliente (cpf, nomecompleto, telefonecliente) 
 VALUES ('1144444411', 'Ana Claudia Cunha', '11999998888');
 /*Por fim, realize a exclusão dos dados da tabela cliente*/
+/*Dessa forma remove a linha toda, usando o DELETE*/
 DELETE FROM cliente
 WHERE cpf = '1144444411';
+/*Para remover apenas um dos dados, devemos usar o UPDATE, EXEMPLO:
+UPDATE cliente
+SET nomecompleto = NULL
+WHERE cpf = '1144444411';*/
+
 /*Realize a exclusão de cada uma das tabelas*/
 DROP TABLE cliente;
 DROP TABLE veterinario;
