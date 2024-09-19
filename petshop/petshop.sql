@@ -2,23 +2,23 @@
 CREATE DATABASE sistemapetshop;
 /*Crie as 4 tabelas de cliente, veterinário, consulta e animal, contendo em cada uma das tabelas o seu atributo com seu respectivo datatype. (Capture a tela do XAMPP)*/
 CREATE TABLE cliente(
-    cpf CHAR(15) primary key NOT NULL,
+    cpf INT(11) primary key,
     nomecliente VARCHAR (180) NOT NULL, 
     telefonecliente INT(15) NOT NULL
 );
 CREATE TABLE veterinario(
     crmv CHAR(20) primary key NOT NULL,
     nomeveterinario VARCHAR(180) NOT NULL,
-    salario INT(12) NOT NULL,
+    salario DECIMAL(5,2) NOT NULL,
     dataadmissao DATE NOT NULL
 );
 CREATE TABLE consulta(
     dia DATE NOT NULL,
     horario TIME NOT NULL,
-    motivo VARCHAR(200)
+    motivo VARCHAR(200) NOT NULL
 );
 CREATE TABLE animal(
-    codigoanimal CHAR(10) primary key NOT NULL,
+    codigoanimal INT(10) primary key,
     nomeanimal VARCHAR(180) NOT NULL,
     raca VARCHAR(30) NOT NULL,
     datanascimento DATE NOT NULL
@@ -49,9 +49,7 @@ SET nomecompleto = NULL
 WHERE cpf = '1144444411';*/
 
 /*Realize a exclusão de cada uma das tabelas*/
-DROP TABLE cliente;
-DROP TABLE veterinario;
-DROP TABLE consulta;
-DROP TABLE animal;
+DROP TABLE cliente, veterinario, consulta, animal;
 /*Realize a exclusão do banco de dados (Capture a tela do XAMPP)*/
 DROP DATABASE sistemapetshop;
+
